@@ -315,35 +315,29 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Visitor Counter - يحسب كل زيارة بدون توقف
-const counterKey = "rujexcom-total-page-views";
-
-async function updateVisitors() {
-    try {
-        // كل زيارة تزيد العداد +1 - بدون قيود
-        const response = await fetch(`https://api.countapi.xyz/hit/${counterKey}`);
-        const data = await response.json();
-        
-        if (data && typeof data.value === 'number') {
-            document.getElementById("visitor-count").textContent = data.value.toLocaleString();
-            console.log('✅ Page view counted! Total:', data.value);
-        }
-    } catch (error) {
-        // Fallback system - يزيد مع كل زيارة
-        console.log('❌ API error, using local counter');
-        let totalViews = parseInt(localStorage.getItem('rujexTotalViews')) || 0;
-        totalViews += 1;
-        localStorage.setItem('rujexTotalViews', totalViews);
-        document.getElementById("visitor-count").textContent = totalViews.toLocaleString();
-        console.log('📈 Local counter increased to:', totalViews);
-    }
+// Visitor Counter محلي - يشتغل 100% بدون API
+function updateVisitors() {
+    // احصل على العداد الحالي من localStorage
+    let totalViews = parseInt(localStorage.getItem('rujexTotalViews')) || 0;
+    
+    // زيد العداد +1
+    totalViews += 1;
+    
+    // خزن القيمة الجديدة
+    localStorage.setItem('rujexTotalViews', totalViews);
+    
+    // اعرض القيمة الجديدة
+    document.getElementById("visitor-count").textContent = totalViews.toLocaleString();
+    
+    console.log('✅ Page view counted! Total:', totalViews);
+    console.log('🔄 Refresh the page to see it increase!');
 }
 
 // تحديث العداد عند تحميل الصفحة
 updateVisitors();
 
-console.log('🚀 Rujex.com - Total page views counter activated');
-console.log('✅ Every page visit increases the count');
+console.log('🚀 Rujex.com - Local page views counter activated');
+console.log('✅ Every page visit increases the count - No API needed');
 </script>
 
 </body>
