@@ -131,29 +131,27 @@ body {
     margin: 8px 0;
 }
 
-/* زر الواتساب الجديد - أيقونة فقط */
-.whatsapp-icon {
+/* زر الواتساب الجديد */
+.whatsapp-button {
     background: #25D366;
     color: white;
-    padding: 14px;
-    border-radius: 50%;
+    padding: 12px 20px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
     margin: 10px 0;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     border: none;
-    width: 60px;
-    height: 60px;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
-.whatsapp-icon:hover {
+.whatsapp-button:hover {
     background: #128C7E;
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
 }
 
@@ -176,15 +174,22 @@ body {
 
 .contact-methods {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
     margin: 12px 0;
 }
 
 .contact-label {
     color: #ffaa00;
     font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.live-chat-text {
+    color: #00ff00;
+    font-size: 0.9rem;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 </style>
@@ -217,9 +222,11 @@ body {
         <a href="mailto:guettafradhouan1989@gmail.com" class="email">guettafradhouan1989@gmail.com</a>
         
         <div class="contact-methods">
-            <!-- أيقونة الواتساب فقط -->
-            <a href="https://wa.me/213782797998" class="whatsapp-icon" target="_blank" title="Contact on WhatsApp">
-                📱
+            <div class="live-chat-text">Live Chat:</div>
+            <!-- زر الواتساب مع نص -->
+            <a href="https://wa.me/213782797998" class="whatsapp-button" target="_blank" title="Start Live Chat on WhatsApp">
+                <span>📱</span>
+                <span>WhatsApp Chat</span>
             </a>
         </div>
         
