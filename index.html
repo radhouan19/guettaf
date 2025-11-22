@@ -256,7 +256,7 @@ body {
     
     <div class="visitors">
         <div>Total Visitors: <span class="counter" id="visitor-count">0</span></div>
-        <div style="font-size: 1rem; color: #888; margin-top: 10px;">Real-time counter • No reset for 7 days</div>
+        <div style="font-size: 1rem; color: #888; margin-top: 10px;">Live Counter • Every visit counts</div>
     </div>
     
     <div class="contact">
@@ -317,65 +317,38 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Visitor Counter محسّن - يحسب كل الزوار الحقيقيين
-const counterKey = "rujexcom-" + new Date().toISOString().split('T')[0]; // مفتاح يومي
-
-// منع العد المزدوج لنفس الزائر
-function getVisitorId() {
-    let visitorId = localStorage.getItem('rujexVisitorId');
-    if (!visitorId) {
-        visitorId = 'visitor-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
-        localStorage.setItem('rujexVisitorId', visitorId);
-    }
-    return visitorId;
-}
+// Visitor Counter جديد - يحسب كل الزيارات بدون قيود
+const counterKey = "rujexcom-global-counter";
 
 async function updateVisitors() {
-    const visitorId = getVisitorId();
-    const today = new Date().toISOString().split('T')[0];
-    
-    // تحقق إذا الزائر عدّ اليوم
-    const lastVisit = localStorage.getItem('rujexLastVisit');
-    if (lastVisit === today) {
-        // الزائر زار اليوم، لا تحسب مرة أخرى
-        return;
-    }
-    
     try {
-        // استخدم خدمة countapi مع معرف الزائر
-        const response = await fetch(`https://api.countapi.xyz/hit/${counterKey}/${visitorId}`);
+        // استخدم خدمة countapi بدون أي قيود - كل زيارة تحتسب
+        const response = await fetch(`https://api.countapi.xyz/hit/${counterKey}`);
         const data = await response.json();
         
         if (data && typeof data.value === 'number') {
             document.getElementById("visitor-count").textContent = data.value.toLocaleString();
-            // حفظ أن الزائر عدّ اليوم
-            localStorage.setItem('rujexLastVisit', today);
+            console.log('✅ Visitor counted:', data.value);
         }
     } catch (error) {
-        // Fallback محسّن
-        const current = parseInt(localStorage.getItem('rujexFallbackCount')) || 0;
-        const lastFallbackDate = localStorage.getItem('rujexFallbackDate');
-        
-        if (lastFallbackDate !== today) {
-            // زيادة العداد فقط مرة واحدة اليوم
-            const newCount = current + 1;
-            localStorage.setItem('rujexFallbackCount', newCount);
-            localStorage.setItem('rujexFallbackDate', today);
-            document.getElementById("visitor-count").textContent = newCount.toLocaleString();
-        } else {
-            document.getElementById("visitor-count").textContent = current.toLocaleString();
-        }
+        console.log('❌ API error, using fallback counter');
+        // Fallback بسيط - يزيد مع كل زيارة
+        const current = parseInt(localStorage.getItem('rujexSimpleCounter')) || 0;
+        const newCount = current + 1;
+        localStorage.setItem('rujexSimpleCounter', newCount);
+        document.getElementById("visitor-count").textContent = newCount.toLocaleString();
     }
 }
 
-// تحديث العداد كل 10 ثواني
+// تحديث العداد فور تحميل الصفحة وتكرار كل 5 ثواني
 updateVisitors();
-setInterval(updateVisitors, 10000);
+setInterval(updateVisitors, 5000);
 
 // إضافة تحليل بسيط
 console.log('🚀 Rujex.com - Premium Domain for Sale');
-console.log('📊 Real visitor counter activated');
+console.log('📊 Unlimited visitor counter activated');
 console.log('⏰ 7-day countdown started');
+console.log('🎯 Every visit will be counted');
 </script>
 
 </body>
