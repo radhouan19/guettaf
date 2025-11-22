@@ -22,50 +22,56 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 15px;
+    padding: 0;
 }
 
 .container {
     background: #111111;
-    border-radius: 15px;
     border: 2px solid #333333;
-    padding: 20px;
+    padding: 40px 30px;
     width: 100%;
-    max-width: 400px;
+    height: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .domain-name {
-    font-size: 2rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #ff4444;
-    margin-bottom: 8px;
-    text-shadow: 0 0 10px #ff0000;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px #ff0000;
 }
 
 .tagline {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: #00ff00;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-    font-size: 0.8rem;
+    gap: 20px;
+    margin: 40px 0;
+    font-size: 1.2rem;
+    width: 90%;
+    max-width: 500px;
 }
 
 .feature {
     background: #222222;
-    padding: 12px 8px;
-    border-radius: 10px;
+    padding: 25px 15px;
+    border-radius: 15px;
     border: 1px solid #333333;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    min-height: 120px;
 }
 
 .feature:nth-child(1) { color: #ffaa00; }
@@ -75,122 +81,149 @@ body {
 
 .pricing {
     background: #1a1a1a;
-    padding: 15px;
-    border-radius: 12px;
-    margin: 20px 0;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 40px 0;
     border: 1px solid #444444;
+    width: 90%;
+    max-width: 500px;
 }
 
 .price-old {
     text-decoration: line-through;
     opacity: 0.7;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     color: #ff6666;
 }
 
 .price-current {
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin: 8px 0;
+    margin: 15px 0;
     color: #00ff00;
 }
 
 .countdown {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #ffaa00;
-    margin-top: 8px;
+    margin-top: 15px;
 }
 
 .visitors {
     background: #222222;
     color: white;
-    padding: 12px;
-    border-radius: 10px;
-    margin: 15px 0;
-    font-size: 0.9rem;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px 0;
+    font-size: 1.3rem;
     border: 1px solid #333333;
+    width: 90%;
+    max-width: 500px;
 }
 
 .counter {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #00ffff;
 }
 
 .contact {
-    margin: 15px 0;
+    margin: 30px 0;
+    width: 90%;
+    max-width: 500px;
 }
 
 .email {
     color: #ffaa00;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     display: block;
-    margin: 8px 0;
+    margin: 15px 0;
 }
 
-/* زر الواتساب الجديد */
 .whatsapp-button {
     background: #25D366;
     color: white;
-    padding: 12px 20px;
-    border-radius: 25px;
+    padding: 20px 30px;
+    border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    margin: 10px 0;
-    font-size: 0.9rem;
+    gap: 12px;
+    margin: 20px 0;
+    font-size: 1.3rem;
     transition: all 0.3s ease;
     border: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-button:hover {
     background: #128C7E;
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 .platforms {
-    margin: 12px 0;
-    font-size: 0.8rem;
+    margin: 20px 0;
+    font-size: 1.1rem;
 }
 
 .platform {
     color: #00aaff;
     text-decoration: none;
-    margin: 0 6px;
+    margin: 0 10px;
+    font-size: 1.1rem;
 }
 
 .footer {
-    margin-top: 15px;
+    margin-top: 30px;
     color: #666666;
-    font-size: 0.7rem;
+    font-size: 1rem;
 }
 
 .contact-methods {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    margin: 12px 0;
+    gap: 12px;
+    margin: 20px 0;
 }
 
 .contact-label {
     color: #ffaa00;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .live-chat-text {
     color: #00ff00;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-height: 800px) {
+    .domain-name {
+        font-size: 4rem;
+    }
+    
+    .tagline {
+        font-size: 1.6rem;
+    }
+    
+    .feature {
+        padding: 30px 20px;
+        min-height: 140px;
+        font-size: 1.3rem;
+    }
+    
+    .price-current {
+        font-size: 3.5rem;
+    }
 }
 </style>
 </head>
@@ -223,7 +256,6 @@ body {
         
         <div class="contact-methods">
             <div class="live-chat-text">Live Chat:</div>
-            <!-- زر الواتساب مع نص -->
             <a href="https://wa.me/213782797998" class="whatsapp-button" target="_blank" title="Start Live Chat on WhatsApp">
                 <span>📱</span>
                 <span>WhatsApp Chat</span>
@@ -240,16 +272,25 @@ body {
 </div>
 
 <script>
-// Countdown with seconds
+// Countdown حقيقي يبدأ من الآن + 7 أيام
 const endDate = new Date();
 endDate.setDate(endDate.getDate() + 7);
+endDate.setHours(23, 59, 59, 999); // ينتهي في نهاية اليوم
+
+// حفظ وقت الانتهاء في localStorage علشان ما يتغير مع كل تحديث
+if (!localStorage.getItem('rujexCountdownEnd')) {
+    localStorage.setItem('rujexCountdownEnd', endDate.getTime());
+}
 
 function updateCountdown() {
-    const now = new Date();
-    const diff = endDate - now;
+    const savedEndTime = localStorage.getItem('rujexCountdownEnd');
+    const endTime = savedEndTime ? parseInt(savedEndTime) : endDate.getTime();
+    const now = new Date().getTime();
+    const diff = endTime - now;
     
     if(diff <= 0){
-        document.getElementById("countdown").innerHTML = "Offer Expired";
+        document.getElementById("countdown").innerHTML = "⏰ Offer Expired!";
+        document.getElementById("countdown").style.color = "#ff0000";
         return;
     }
     
@@ -258,11 +299,13 @@ function updateCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
     
-    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s left`;
+    document.getElementById("countdown").innerHTML = 
+        `⏳ ${days} days ${hours}h ${minutes}m ${seconds}s`;
 }
 
-setInterval(updateCountdown, 1000);
+// بدء العد التنازلي فوراً
 updateCountdown();
+setInterval(updateCountdown, 1000);
 
 // Visitor Counter
 const counterKey = "rujexcom-visits-counter";
