@@ -22,51 +22,46 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 0;
+    padding: 15px;
 }
 
 .container {
     background: #111111;
-    border-radius: 0;
-    border: none;
-    padding: 30px 20px;
+    border-radius: 15px;
+    border: 2px solid #333333;
+    padding: 20px;
     width: 100%;
-    height: 100%;
+    max-width: 400px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
 }
 
 .domain-name {
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #ff4444;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px #ff0000;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px #ff0000;
 }
 
 .tagline {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #00ff00;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 25px 0;
-    font-size: 1rem;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 0.8rem;
 }
 
 .feature {
     background: #222222;
-    padding: 15px 10px;
-    border-radius: 12px;
+    padding: 12px 8px;
+    border-radius: 10px;
     border: 1px solid #333333;
-    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,142 +75,117 @@ body {
 
 .pricing {
     background: #1a1a1a;
-    padding: 20px;
-    border-radius: 15px;
-    margin: 25px 0;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
     border: 1px solid #444444;
 }
 
 .price-old {
     text-decoration: line-through;
     opacity: 0.7;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #ff6666;
 }
 
 .price-current {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 8px 0;
     color: #00ff00;
 }
 
 .countdown {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #ffaa00;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .visitors {
     background: #222222;
     color: white;
-    padding: 15px;
-    border-radius: 12px;
-    margin: 20px 0;
-    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 0.9rem;
     border: 1px solid #333333;
 }
 
 .counter {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #00ffff;
 }
 
 .contact {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .email {
     color: #ffaa00;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     display: block;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 
-.whatsapp-button {
+/* زر الواتساب الجديد - أيقونة فقط */
+.whatsapp-icon {
     background: #25D366;
     color: white;
-    padding: 16px 25px;
-    border-radius: 30px;
+    padding: 14px;
+    border-radius: 50%;
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin: 15px 0;
-    font-size: 1.1rem;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 1.5rem;
     transition: all 0.3s ease;
     border: none;
-    width: 90%;
-    justify-content: center;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
-.whatsapp-button:hover {
+.whatsapp-icon:hover {
     background: #128C7E;
-    transform: scale(1.02);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
 }
 
 .platforms {
-    margin: 15px 0;
-    font-size: 1rem;
+    margin: 12px 0;
+    font-size: 0.8rem;
 }
 
 .platform {
     color: #00aaff;
     text-decoration: none;
-    margin: 0 8px;
-    font-size: 1rem;
+    margin: 0 6px;
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 15px;
     color: #666666;
+    font-size: 0.7rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.contact-label {
+    color: #ffaa00;
     font-size: 0.9rem;
-}
-
-/* تحسينات للشاشات الصغيرة */
-@media (max-width: 480px) {
-    .container {
-        padding: 25px 15px;
-    }
-    
-    .domain-name {
-        font-size: 2.5rem;
-    }
-    
-    .tagline {
-        font-size: 1rem;
-    }
-    
-    .features {
-        gap: 12px;
-        margin: 20px 0;
-    }
-    
-    .feature {
-        padding: 12px 8px;
-        min-height: 70px;
-        font-size: 0.9rem;
-    }
-    
-    .price-current {
-        font-size: 2rem;
-    }
-    
-    .whatsapp-button {
-        padding: 14px 20px;
-        font-size: 1rem;
-    }
-}
-
-/* منع التمرير الأفقي */
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
+    margin-bottom: 8px;
 }
 </style>
 </head>
@@ -243,13 +213,15 @@ html, body {
     </div>
     
     <div class="contact">
-        <div style="color: #ffaa00; font-size: 1.1rem; margin-bottom: 10px;">Contact:</div>
+        <div class="contact-label">Contact Us:</div>
         <a href="mailto:guettafradhouan1989@gmail.com" class="email">guettafradhouan1989@gmail.com</a>
         
-        <!-- زر الواتساب -->
-        <a href="https://wa.me/213782797998" class="whatsapp-button" target="_blank">
-            📱 WhatsApp: +213 782 797 998
-        </a>
+        <div class="contact-methods">
+            <!-- أيقونة الواتساب فقط -->
+            <a href="https://wa.me/213782797998" class="whatsapp-icon" target="_blank" title="Contact on WhatsApp">
+                📱
+            </a>
+        </div>
         
         <div class="platforms">
             <a href="https://sedo.com" class="platform">Sedo</a>
